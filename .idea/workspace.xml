@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="375951a3-602b-406f-99db-f36c2826ba8e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/site/fr/apt/index.apt" afterPath="$PROJECT_DIR$/src/site/fr/apt/index.apt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -21,7 +20,33 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
               <caret line="7" column="44" lean-forward="true" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
-              <folding />
+              <folding>
+                <marker date="1593956899629" expanded="true" signature="32575:32617" ph="..." />
+                <marker date="1593956899629" expanded="true" signature="32575:32635" ph="..." />
+                <marker date="1593956899629" expanded="true" signature="32575:32648" ph="..." />
+                <marker date="1593956899629" expanded="true" signature="32575:32663" ph="..." />
+                <marker date="1593956899629" expanded="true" signature="32698:34063" ph="..." />
+                <marker date="1593956899629" expanded="true" signature="32711:34048" ph="..." />
+                <marker date="1593956899629" expanded="true" signature="32762:33027" ph="..." />
+                <marker date="1593956899629" expanded="true" signature="32781:33012" ph="..." />
+                <marker date="1593956899629" expanded="true" signature="32814:32992" ph="..." />
+                <marker date="1593956899629" expanded="true" signature="32854:32958" ph="..." />
+                <marker date="1593956899629" expanded="true" signature="32875:32936" ph="..." />
+                <marker date="1593956899629" expanded="true" signature="33070:33376" ph="..." />
+                <marker date="1593956899629" expanded="true" signature="33089:33361" ph="..." />
+                <marker date="1593956899629" expanded="true" signature="33163:33341" ph="..." />
+                <marker date="1593956899629" expanded="true" signature="33203:33307" ph="..." />
+                <marker date="1593956899629" expanded="true" signature="33224:33285" ph="..." />
+                <marker date="1593956899629" expanded="true" signature="33411:33717" ph="..." />
+                <marker date="1593956899629" expanded="true" signature="33430:33702" ph="..." />
+                <marker date="1593956899629" expanded="true" signature="33504:33682" ph="..." />
+                <marker date="1593956899629" expanded="true" signature="33544:33648" ph="..." />
+                <marker date="1593956899629" expanded="true" signature="33565:33626" ph="..." />
+                <marker date="1593956899629" expanded="true" signature="33769:34034" ph="..." />
+                <marker date="1593956899629" expanded="true" signature="33788:34019" ph="..." />
+                <marker date="1593956899629" expanded="true" signature="33821:33999" ph="..." />
+                <marker date="1593956899629" expanded="true" signature="33861:33965" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -274,11 +299,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6078000" />
+    <option name="totallyTimeSpent" value="6258000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -290,7 +314,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.52375567" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.52375567" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27843347" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -397,7 +421,33 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="7" column="44" lean-forward="true" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
-          <folding />
+          <folding>
+            <marker date="1593956899629" expanded="true" signature="32575:32617" ph="..." />
+            <marker date="1593956899629" expanded="true" signature="32575:32635" ph="..." />
+            <marker date="1593956899629" expanded="true" signature="32575:32648" ph="..." />
+            <marker date="1593956899629" expanded="true" signature="32575:32663" ph="..." />
+            <marker date="1593956899629" expanded="true" signature="32698:34063" ph="..." />
+            <marker date="1593956899629" expanded="true" signature="32711:34048" ph="..." />
+            <marker date="1593956899629" expanded="true" signature="32762:33027" ph="..." />
+            <marker date="1593956899629" expanded="true" signature="32781:33012" ph="..." />
+            <marker date="1593956899629" expanded="true" signature="32814:32992" ph="..." />
+            <marker date="1593956899629" expanded="true" signature="32854:32958" ph="..." />
+            <marker date="1593956899629" expanded="true" signature="32875:32936" ph="..." />
+            <marker date="1593956899629" expanded="true" signature="33070:33376" ph="..." />
+            <marker date="1593956899629" expanded="true" signature="33089:33361" ph="..." />
+            <marker date="1593956899629" expanded="true" signature="33163:33341" ph="..." />
+            <marker date="1593956899629" expanded="true" signature="33203:33307" ph="..." />
+            <marker date="1593956899629" expanded="true" signature="33224:33285" ph="..." />
+            <marker date="1593956899629" expanded="true" signature="33411:33717" ph="..." />
+            <marker date="1593956899629" expanded="true" signature="33430:33702" ph="..." />
+            <marker date="1593956899629" expanded="true" signature="33504:33682" ph="..." />
+            <marker date="1593956899629" expanded="true" signature="33544:33648" ph="..." />
+            <marker date="1593956899629" expanded="true" signature="33565:33626" ph="..." />
+            <marker date="1593956899629" expanded="true" signature="33769:34034" ph="..." />
+            <marker date="1593956899629" expanded="true" signature="33788:34019" ph="..." />
+            <marker date="1593956899629" expanded="true" signature="33821:33999" ph="..." />
+            <marker date="1593956899629" expanded="true" signature="33861:33965" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
