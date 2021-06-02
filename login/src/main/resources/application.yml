@@ -1,0 +1,50 @@
+
+server:
+  port: 8764
+eureka:
+#  instanc中的配置是让该服务使用IP注册到注册中心，而不是hostname
+  client:
+#是否向注册中心注册自己
+    register-with-eureka: true
+#是否从注册中心查询服务
+    fetch-registry: true
+#是否从注册中心查询服务
+    service-url:
+      defaultZone: http://cloudRegister1:8761/eureka/,http://cloudRegister2:8762/eureka/
+db:
+  host: 139.196.54.20
+spring:
+  application:
+    name: login
+  mail:
+      host: smtp.qq.com
+      from: 1763180842@qq.com
+      username: 1763180842@qq.com
+      password: teshqlptwoyycahh
+      protocol: smtp
+      default-encoding: UTF-8
+  datasource:
+        druid:
+          url: jdbc:mysql://${db.host}:3306/myBlog?useUnicode=true&characterEncoding=utf8&serverTimezone=Hongkong&allowMultiQueries=true&useSSL=true&verifyServerCertificate=false&autoReconnect=true
+          username: kyee
+          password: kyeepass
+          driver-class-name: com.mysql.jdbc.Driver
+          #是否开启监控
+          #filters: 'stat'
+          maxActive: 1000
+          initialSize: 100
+          maxWait: 60000
+          minIdle: 50
+          timeBetweenEvictionRunsMillis: 60000
+          minEvictableIdleTimeMillis: 300000
+          validationQuery: "select 1"
+          testWhileIdle: true
+          maxOpenPreparedStatements: 20
+          testOnBorrow: false
+          testOnReturn: false
+          poolPreparedStatements: true
+          useGlobalDataSourceStat: false
+          #开启监控之后持久化到日志的间隔
+ribbon:
+  eureka:
+    enabled: true

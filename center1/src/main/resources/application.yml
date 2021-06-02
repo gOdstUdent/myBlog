@@ -1,0 +1,14 @@
+#本机端口
+server:
+  port: 8762
+eureka:
+  instance:
+    hostname: cloudRegister2
+  client:
+#是否向注册中心注册自己
+    register-with-eureka: false
+#是否从注册中心查询服务
+    fetch-registry: false
+#注册中心地址
+    service-url:
+      defaultZone: http://cloudRegister1:8761/eureka/
