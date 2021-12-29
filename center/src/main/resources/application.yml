@@ -12,3 +12,4 @@ eureka:
 #注册中心地址
     service-url:
       defaultZone: http://cloudRegister2:8762/eureka/
+debug: true

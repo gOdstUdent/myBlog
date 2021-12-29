@@ -27,6 +27,7 @@
         <java.version>1.8</java.version>
         <springboot.version>2.3.1.RELEASE</springboot.version>
         <spring-cloud.version>Hoxton.SR6</spring-cloud.version>
+        <spring.shiro.version>1.6.0</spring.shiro.version>
         <mysql.version>5.1.46</mysql.version>
     </properties>
     <dependencyManagement>
@@ -101,6 +102,11 @@
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>1.16.18</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-spring</artifactId>
+                <version>${spring.shiro.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

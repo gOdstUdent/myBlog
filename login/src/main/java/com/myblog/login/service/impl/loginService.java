@@ -31,4 +31,10 @@ public class loginService implements IloginService {
         mailService.sendHtmlMail (user.getUserEmail(),subject,context);
         return null;
     }
+
+    @Override
+    public User getUserByName(String name) {
+
+        return loginDao.getUserByName(name);
+    }
 }

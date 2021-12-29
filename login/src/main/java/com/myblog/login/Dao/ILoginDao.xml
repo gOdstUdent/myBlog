@@ -1,8 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.myblog.login.Dao.ILoginDao" >
+    <resultMap id="userInfo" type="com.myblog.login.domain.User">
+        <id column="id"/>
+        <result column="username" property="username"/>
+        <result column="password" property="password"/>
+        <collection property="roles" ofType="com.myblog.login.domain.Role" >
+            <id column="roleId"  property="roleId"/>
+            <result column="roleName" property="roleName"/>
+            <collection property="permissions" ofType="com.myblog.login.domain.Permissions">
+                <id column="permissionId" property="permissionId"/>
+                <result column="permissionName" property="permissionName"/>
+            </collection>
+        </collection>
+    </resultMap>
 
     <insert id="register">
-        INSERT INTO blog_user(username,passsward,inuse) VALUES (#{username},#{passward},#{inuse});
+        INSERT INTO blog_user(username,password,inuse) VALUES (#{username},#{password},#{inuse});
     </insert>
+    <select id="getUserByName" resultMap="userInfo">
+        SELECT bu.id,bu.username,bu.password,r.id roleId,r.roleName,p.id permissionId,p.permissionName  FROM blog_user bu
+        LEFT JOIN rel_user_role rur ON bu.id=rur.userId
+        LEFT JOIN role  r on rur.roleId=r.id
+        LEFT join rel_role_permission rrp ON rrp.roleId=r.id
+        LEFT JOIN permission p on p.id=rrp.permissionId
+        WHERE bu.username=#{name} limit 1;
+    </select>
 </mapper>
