@@ -1,15 +1,13 @@
 package com.myblog.login.domain;
 
 import lombok.Data;
-import lombok.Getter;
 
 import java.util.List;
-import java.util.Set;
 import java.util.UUID;
 
 @Data
 public class User {
-    private String userId;
+    private Integer id;
     private String username;
     private String password;
     private String userEmail;
