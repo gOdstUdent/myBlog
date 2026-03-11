@@ -4,29 +4,25 @@ import com.blog.common.domain.Response;
 import com.blog.common.domain.ResponseStatus;
 import com.myblog.login.domain.User;
 import com.myblog.login.service.IloginService;
-import com.sun.imageio.plugins.common.ImageUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
-import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.authz.AuthorizationException;
 import org.apache.shiro.subject.Subject;
-import org.aspectj.apache.bcel.classfile.Code;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
-import sun.security.util.Password;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @Slf4j
 public class loginController {
     @Autowired
     private IloginService iloginService;
-    @Value("${server.port}")
-    private String port;;
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public Response login(@RequestParam String username, @RequestParam String password) {
@@ -73,5 +69,66 @@ public class loginController {
     @RequestMapping(value = "/user/checkCode",method = RequestMethod.GET)
     public  String checkCode(@RequestParam String code){
         return code;
+    }
+
+    @GetMapping("/users")
+    public Response listUsers(@RequestParam(required = false) String username,
+                              @RequestParam(required = false) Boolean inuse) {
+        List<User> users = iloginService.listUsers(username, inuse)
+                .stream()
+                .map(this::hidePassword)
+                .collect(Collectors.toList());
+        return new Response(ResponseStatus.SUCCESS, "200", "查询成功", users);
+    }
+
+    @GetMapping("/users/{id}")
+    public Response getUserById(@PathVariable Integer id) {
+        User user = iloginService.getUserById(id);
+        if (user == null) {
+            return new Response(ResponseStatus.FAIL, "404", "用户不存在");
+        }
+        return new Response(ResponseStatus.SUCCESS, "200", "查询成功", hidePassword(user));
+    }
+
+    @PostMapping("/users")
+    public Response createUser(@RequestBody User user) {
+        if (StringUtils.isEmpty(user.getUsername()) || StringUtils.isEmpty(user.getPassword())) {
+            return new Response(ResponseStatus.FAIL, "400", "用户名和密码不能为空");
+        }
+        boolean created = iloginService.createUser(user);
+        if (!created) {
+            return new Response(ResponseStatus.ERROR, "500", "创建失败");
+        }
+        return new Response(ResponseStatus.SUCCESS, "200", "创建成功", hidePassword(user));
+    }
+
+    @PutMapping("/users/{id}")
+    public Response updateUser(@PathVariable Integer id, @RequestBody User user) {
+        if (StringUtils.isEmpty(user.getUsername()) && StringUtils.isEmpty(user.getPassword()) && user.getInuse() == null) {
+            return new Response(ResponseStatus.FAIL, "400", "至少提供一个要更新的字段");
+        }
+        boolean updated = iloginService.updateUser(id, user);
+        if (!updated) {
+            return new Response(ResponseStatus.FAIL, "404", "用户不存在或未更新");
+        }
+        User updatedUser = iloginService.getUserById(id);
+        return new Response(ResponseStatus.SUCCESS, "200", "更新成功", hidePassword(updatedUser));
+    }
+
+    @DeleteMapping("/users/{id}")
+    public Response deleteUser(@PathVariable Integer id) {
+        boolean deleted = iloginService.deleteUser(id);
+        if (!deleted) {
+            return new Response(ResponseStatus.FAIL, "404", "用户不存在");
+        }
+        return new Response(ResponseStatus.SUCCESS, "200", "删除成功");
+    }
+
+    private User hidePassword(User user) {
+        if (user == null) {
+            return null;
+        }
+        user.setPassword(null);
+        return user;
     }
 }

@@ -8,6 +8,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 @Slf4j
@@ -36,5 +38,34 @@ public class loginService implements IloginService {
     public User getUserByName(String name) {
 
         return loginDao.getUserByName(name);
+    }
+
+    @Override
+    public List<User> listUsers(String username, Boolean inuse) {
+        return loginDao.listUsers(username, inuse);
+    }
+
+    @Override
+    public User getUserById(Integer id) {
+        return loginDao.getUserById(id);
+    }
+
+    @Override
+    public boolean createUser(User user) {
+        if (user.getInuse() == null) {
+            user.setInuse(false);
+        }
+        return loginDao.createUser(user) > 0;
+    }
+
+    @Override
+    public boolean updateUser(Integer id, User user) {
+        user.setId(id);
+        return loginDao.updateUser(user) > 0;
+    }
+
+    @Override
+    public boolean deleteUser(Integer id) {
+        return loginDao.deleteUser(id) > 0;
     }
 }
